@@ -8,8 +8,8 @@ from winotify import Notification, audio
 
 def run_Toaster(total):
     toaster = Notification(app_id="house-notify", title="House Notifier",
-                           msg="Total Houses: " + str(total), duration="short",
-                           icon=os.path.abspath("./image/house.ico"))
+                           msg="Total Houses: " + str(total), duration="short"
+                           )
     toaster.add_actions("Check Here!", "https://www.torresdemeloneto.com.br/aluguel/casa/fortaleza/")
     toaster.set_audio(audio.Default, loop=False)
     toaster.show()
