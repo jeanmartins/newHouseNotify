@@ -26,7 +26,7 @@ if __name__ == '__main__':
         request = requests.get(apiUrl, headers=Headers)
         torresResponse = json.loads(request.text, object_hook=lambda d: SimpleNamespace(**d))
         totalHousesNow = int(torresResponse.resultado.total)
-        if totalHousesNow > totalHouses or totalHousesNow < totalHouses or totalHouses == 0:
-            totalHouses = totalHousesNow
-            run_Toaster(totalHouses)
+        if totalHousesNow > totalHouses:
+            run_Toaster(totalHousesNow)
+        totalHouses = totalHousesNow
         time.sleep(300)
